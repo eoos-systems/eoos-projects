@@ -1,0 +1,9 @@
+[submodule "projects/eoos-sample-applications"]
+	path = projects/eoos-sample-applications
+	url = ../eoos-project-sample-applications.git
+[submodule "projects/eoos-if-win32"]
+	path = projects/eoos-if-win32
+	url = ../eoos-project-if-win32.git
+[submodule "projects/eoos-if-posix"]
+	path = projects/eoos-if-posix
+	url = ../eoos-project-if-posix.git
