@@ -81,6 +81,6 @@ REPOSITORY/EOOS/
     └── eoos-sample-applications
 ```
 
-- **[eoos-if-posix(https://gitflic.ru/project/baigudin-software/eoos-project-if-posix)** - is EOOS project for POSIX based operating systems.
+- **[eoos-if-posix](https://gitflic.ru/project/baigudin-software/eoos-project-if-posix)** - is EOOS project for POSIX based operating systems.
 - **[eoos-if-win32](https://gitflic.ru/project/baigudin-software/eoos-project-if-win32)** - is EOOS project for WIN32 API based operating systems.
 - **[eoos-sample-applications](https://gitflic.ru/project/baigudin-software/eoos-project-sample-applications)** - is cross-platform sample applications.
