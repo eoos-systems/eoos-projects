@@ -93,8 +93,8 @@ REPOSITORY/EOOS/
 #### Build EOOS Project
 
 Before developing your own application based on EOOS, you have to build an appropriate 
-EOOS project for operating system you use. Detailed How-to Build Project chapters written 
-for each project in its root *README.md* files that you can find here:
+EOOS project for operating system you use. Detailed How-to Build Project chapters are 
+written for each project in its root *README.md* files that you can find here:
 
 - **[How-to Build EOOS Project for POSIX](https://gitflic.ru/project/baigudin-software/eoos-project-if-posix/blob?file=README.md)**
 - **[How-to Build EOOS Project for WIN32](https://gitflic.ru/project/baigudin-software/eoos-project-if-win32/blob?file=README.md)**
@@ -103,6 +103,9 @@ for each project in its root *README.md* files that you can find here:
 
 #### Build EOOS Sample Application
 
-
+To get a start point for developing your own application based on EOOS, you can consider 
+Sample Applications, and *Hello World* especially. Thus, the Sample Applications repository 
+can be modified for your needs. Detailed How-to Build Sample Applications chapter is written 
+in root *README.md* files that you can find here:
 
 - **[How-to Build Sample Applications](https://gitflic.ru/project/baigudin-software/eoos-project-sample-applications/blob?file=README.md)**
