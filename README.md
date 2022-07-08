@@ -3,8 +3,8 @@
 
 **EOOS copyrights reserved in [Rospatent Federal Service for Intellectual Property]( https://www1.fips.ru/registers-doc-view/fips_servlet?DB=EVM&DocNumber=2017664105&TypeFile=html), Russian Federation**
 
-This repository is a **main entry point** to all the EOOS Automotive Projects, which contains aligned 
-projects to build user applications based on an exact EOOS API version for all the platforms.
+This is **super repository** of all the EOOS Automotive projects and **main entry point** to build 
+user applications based on an exact EOOS API version for all the platforms.
 
 EOOS Automotive is **a set of C++ libraries** for different hardware platforms and operating systems 
 **to develop cross-platform applications** in automotive sphere.
@@ -25,7 +25,7 @@ has **Sample Applications** for fast start developing new user applications.
 ## Getting Started
 
 Before you start to develop your first application based on EOOS, we want you to know that EOOS is 
-not one project which can be built for a platform based on some compiler global defines – no. 
+not one project which can be built for a platform based on some compiler global defines – no, 
 EOOS has deep elaborated projects each for exactly one platform. These projects are included 
 as git submodules and have well defined modularity that means each EOOS project contains software 
 modules included as git submodules as well. 
@@ -60,7 +60,7 @@ REPOSITORY$ git clone --branch master git@gitflic.ru:baigudin-software/eoos-proj
 
 ###### 3. Initialize and update all submodules for the repository recursively
 
-As we mention above, this repository contains sub-repositories, and the sub-repositories also 
+As we mention above, this super repository contains sub-repositories, and the sub-repositories also 
 contain sub-repositories. Therefore `--recursive` key must be passed to the git command line.
 
 ```
@@ -72,8 +72,8 @@ REPOSITORY/EOOS$ git submodule update --init --recursive
 
 #### Repository Structure
 
-This repository consists of projects located in the directory of the same name. 
-These projects included to the repository as git submodules. The structure and short 
+This super repository consists of projects located in the directory of the same name. 
+These projects included to the super repository as git submodules. The structure and short 
 description are given below.
 
 ```
