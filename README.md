@@ -1,7 +1,7 @@
 # EOOS Automotive Projects
 ---
 
-**EOOS copyrights reserved in [Rospatent Federal Service for Intellectual Property]( https://www1.fips.ru/registers-doc-view/fips_servlet?DB=EVM&DocNumber=2017664105&TypeFile=html), Russian Federation**
+**EOOS copyrights reserved in [Rospatent Federal Service for Intellectual Property](https://www1.fips.ru/registers-doc-view/fips_servlet?DB=EVM&DocNumber=2017664105&TypeFile=html), Russian Federation**
 
 This is **super repository** of all the EOOS Automotive projects and **main entry point** to build 
 user applications based on an exact EOOS API version for all the platforms.
