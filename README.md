@@ -22,7 +22,7 @@ has **Sample Applications** for fast start developing new user applications.
 
 ---
 
-#### Quality of EOOS Automotive
+###### Quality of EOOS Automotive
 
 - MISRA C++ and AUTOSAR C++: **0** violations
 - Unit Tests coverage: **96.5%** for POSIX and **94%** for WIN32
