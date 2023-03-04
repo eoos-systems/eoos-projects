@@ -31,7 +31,7 @@ class Program():
             self.__output_status()
         except Exception as e:
             Message.out(f'[EXCEPTION] {e}', Message.ERR)        
-            error = 1;
+            error = 1
         finally:
             status = Message.OK
             not_word = ''
@@ -44,72 +44,74 @@ class Program():
 
 
     def __init_repo(self):
-        subprocess.run(f'git checkout develop')
-        subprocess.run(f'git submodule update --init --recursive')
-        subprocess.run(f'git remote set-url origin --push --add git@gitflic.ru:baigudin-software/eoos-projects.git')
-        subprocess.run(f'git remote set-url origin --push --add git@github.com:baigudin-software/eoos-projects.git')
+        os.chdir('./../..')
+        subprocess.run(['git', 'status', '-b', '-s'])
+        subprocess.run(['git', 'checkout', 'develop'])
+        subprocess.run(['git', 'submodule', 'update', '--init', '--recursive'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@gitflic.ru:baigudin-software/eoos-projects.git'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@github.com:baigudin-software/eoos-projects.git'])
 
 
     def __init_sub_repos(self):
-        os.chdir(f'./projects/eoos-if-posix/')
-        subprocess.run(f'git checkout master')
-        subprocess.run(f'git remote set-url origin --push --add git@gitflic.ru:baigudin-software/eoos-project-if-posix.git')
-        subprocess.run(f'git remote set-url origin --push --add git@github.com:baigudin-software/eoos-project-if-posix.git')
-        os.chdir(f'./../..')
+        os.chdir('./projects/eoos-if-posix/')
+        subprocess.run(['git', 'checkout', 'master'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@gitflic.ru:baigudin-software/eoos-project-if-posix.git'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@github.com:baigudin-software/eoos-project-if-posix.git'])
+        os.chdir('./../..')
 
-        os.chdir(f'./projects/eoos-if-win32/')
-        subprocess.run(f'git checkout master')
-        subprocess.run(f'git remote set-url origin --push --add git@gitflic.ru:baigudin-software/eoos-project-if-win32.git')
-        subprocess.run(f'git remote set-url origin --push --add git@github.com:baigudin-software/eoos-project-if-win32.git')
-        os.chdir(f'./../..')
+        os.chdir('./projects/eoos-if-win32/')
+        subprocess.run(['git', 'checkout', 'master'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@gitflic.ru:baigudin-software/eoos-project-if-win32.git'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@github.com:baigudin-software/eoos-project-if-win32.git'])
+        os.chdir('./../..')
 
-        os.chdir(f'./projects/eoos-sample-applications/')
-        subprocess.run(f'git checkout master')
-        subprocess.run(f'git remote set-url origin --push --add git@gitflic.ru:baigudin-software/eoos-project-sample-applications.git')
-        subprocess.run(f'git remote set-url origin --push --add git@github.com:baigudin-software/eoos-project-sample-applications.git')
-        os.chdir(f'./../..')
+        os.chdir('./projects/eoos-sample-applications/')
+        subprocess.run(['git', 'checkout', 'master'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@gitflic.ru:baigudin-software/eoos-project-sample-applications.git'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@github.com:baigudin-software/eoos-project-sample-applications.git'])
+        os.chdir('./../..')
 
 
     def __init_sub_sub_repos_for(self, api):
         os.chdir(f'./projects/eoos-if-{api}/')
 
-        os.chdir(f'./codebase/interface/')
-        subprocess.run(f'git checkout master')
-        subprocess.run(f'git remote set-url origin --push --add git@gitflic.ru:baigudin-software/eoos-api.git')
-        subprocess.run(f'git remote set-url origin --push --add git@github.com:baigudin-software/eoos-api.git')
-        os.chdir(f'./../..')
+        os.chdir('./codebase/interface/')
+        subprocess.run(['git', 'checkout', 'master'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@gitflic.ru:baigudin-software/eoos-api.git'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@github.com:baigudin-software/eoos-api.git'])
+        os.chdir('./../..')
 
-        os.chdir(f'./codebase/library/')
-        subprocess.run(f'git checkout master')
-        subprocess.run(f'git remote set-url origin --push --add git@gitflic.ru:baigudin-software/eoos-library.git')
-        subprocess.run(f'git remote set-url origin --push --add git@github.com:baigudin-software/eoos-library.git')
-        os.chdir(f'./../..')
+        os.chdir('./codebase/library/')
+        subprocess.run(['git', 'checkout', 'master'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@gitflic.ru:baigudin-software/eoos-library.git'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@github.com:baigudin-software/eoos-library.git'])
+        os.chdir('./../..')
 
-        os.chdir(f'./codebase/system/')
-        subprocess.run(f'git checkout master')
-        subprocess.run(f'git remote set-url origin --push --add git@gitflic.ru:baigudin-software/eoos-system-if-{api}.git')
-        subprocess.run(f'git remote set-url origin --push --add git@github.com:baigudin-software/eoos-system-if-{api}.git')
-        os.chdir(f'./../..')
+        os.chdir('./codebase/system/')
+        subprocess.run(['git', 'checkout', 'master'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@gitflic.ru:baigudin-software/eoos-system-if-{api}.git'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@github.com:baigudin-software/eoos-system-if-{api}.git'])
+        os.chdir('./../..')
 
-        os.chdir(f'./codebase/tests/')
-        subprocess.run(f'git checkout master')
-        subprocess.run(f'git remote set-url origin --push --add git@gitflic.ru:baigudin-software/eoos-tests.git')
-        subprocess.run(f'git remote set-url origin --push --add git@github.com:baigudin-software/eoos-tests.git')
-        os.chdir(f'./../..')
+        os.chdir('./codebase/tests/')
+        subprocess.run(['git', 'checkout', 'master'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@gitflic.ru:baigudin-software/eoos-tests.git'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@github.com:baigudin-software/eoos-tests.git'])
+        os.chdir('./../..')
 
-        os.chdir(f'./scripts/')
-        subprocess.run(f'git checkout master')
-        subprocess.run(f'git remote set-url origin --push --add git@gitflic.ru:baigudin-software/eoos-scripts.git')
-        subprocess.run(f'git remote set-url origin --push --add git@github.com:baigudin-software/eoos-scripts.git')
-        os.chdir(f'./..')
-        os.chdir(f'./../..')
+        os.chdir('./scripts/')
+        subprocess.run(['git', 'checkout', 'master'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@gitflic.ru:baigudin-software/eoos-scripts.git'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@github.com:baigudin-software/eoos-scripts.git'])
+        os.chdir('./..')
+        os.chdir('./../..')
 
 
     def __output_status(self):
-        subprocess.run(f'git status -b -s')
-        subprocess.run(f'git submodule foreach --recursive git status -b -s')
-        subprocess.run(f'git remote -v')
-        subprocess.run(f'git submodule foreach --recursive git remote -v')
+        subprocess.run(['git', 'status', '-b', '-s'])
+        subprocess.run(['git', 'submodule', 'foreach', '--recursive', 'git', 'status', '-b', '-s'])
+        subprocess.run(['git', 'remote', '-v'])
+        subprocess.run(['git', 'submodule', 'foreach', '--recursive', 'git', 'remote', '-v'])
 
 
     def __check_run_path(self):
