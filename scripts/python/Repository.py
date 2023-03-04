@@ -4,7 +4,7 @@
 # @copyright 2023, Sergey Baigudin, Baigudin Software
 
 import sys
-from init_repo.Program import Program
+from repository.Program import Program
 
 
 def main():
