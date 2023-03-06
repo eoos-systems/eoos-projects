@@ -130,7 +130,8 @@ with a mirror on [GitHub](https://github.com/baigudin-software/eoos-projects). T
 to simplify initialization of the git repositories for development, we have create a `Repository.py` script that 
 does all routine work for you here in `script/python` directory.
 
-
+**NOTE**  Please, follow "Prerequisites on *your OS*" to install all environment you need to successfully 
+initialize to repositories and develop on them by the link given for appropriate EOOS project.
 
 #### Prepare Git Repository
 
