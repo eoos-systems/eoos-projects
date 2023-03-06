@@ -149,10 +149,10 @@ $ cd REPOSITORY
 
 ###### 2. Clone this repository
 
-For instance we will clone it to EOOS-DEV directory by SSH.
+We strongly recommend to do it by SSH.
 
 ```
-REPOSITORY$ git clone --branch master git@gitflic.ru:baigudin-software/eoos-projects.git EOOS-PROJECTS
+REPOSITORY$ git clone git@gitflic.ru:baigudin-software/eoos-projects.git
 ```
 
 ###### 3. Initialize this repository for development
@@ -160,8 +160,8 @@ REPOSITORY$ git clone --branch master git@gitflic.ru:baigudin-software/eoos-proj
 As we mention above, have just to execute the script.
 
 ```
-REPOSITORY$ cd EOOS-PROJECTS/scripts/python
-REPOSITORY/EOOS-PROJECTS/scripts/python$ python --init
+REPOSITORY$ cd eoos-projects/scripts/python
+REPOSITORY/eoos-projects/scripts/python$ python --init
 ```
 
 **All is done!** The repository and all the sub-repositories are ready to develop on them.
@@ -169,6 +169,6 @@ REPOSITORY/EOOS-PROJECTS/scripts/python$ python --init
 To see other possible options please refer to the script help.
 
 ```
-REPOSITORY/EOOS-PROJECTS/scripts/python$ python -h
+REPOSITORY/eoos-projects/scripts/python$ python -h
 ```
 
