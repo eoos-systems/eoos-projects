@@ -124,8 +124,8 @@ in root *README.md* files that you can find here:
 
 This chapter describes a few hit for developers who would like to be involved in EOOS developing process.
 
-EOOS developing process is besed on the `develop` branch which points to appropriate `master` branches 
-of sub-repositories. Also, main developing git service is [GitFlic](https://gitflic.ru/project/baigudin-software/eoos-projects)
+EOOS developing process is based on the `develop` branch which points to appropriate `master` branches 
+of sub-repositories. Also, main git service for developing is [GitFlic](https://gitflic.ru/project/baigudin-software/eoos-projects)
 with a mirror on [GitHub](https://github.com/baigudin-software/eoos-projects). To automate all the agreements and 
 to simplify initialization of the git repositories for development, we have create a `Repository.py` script that 
 does all routine work for you here in `script/python` directory.
