@@ -120,7 +120,7 @@ in root *README.md* files that you can find here:
 
 
 
-## For EOOS Developers
+## For Developers
 
 This chapter describes a few hit for developers who would like to be involved in EOOS developing process.
 
@@ -165,4 +165,10 @@ REPOSITORY/EOOS-PROJECTS/scripts/python$ python --init
 ```
 
 All is done. The repository and all the sub-repositories are ready to develop on them.
+
+To see all other options please refer to the script help.
+
+```
+REPOSITORY/EOOS-PROJECTS/scripts/python$ python -h`
+```
 
