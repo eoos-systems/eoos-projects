@@ -164,7 +164,7 @@ REPOSITORY$ cd EOOS-PROJECTS/scripts/python
 REPOSITORY/EOOS-PROJECTS/scripts/python$ python --init
 ```
 
-All is done. The repository and all the sub-repositories are ready to develop on them.
+*All is done!* The repository and all the sub-repositories are ready to develop on them.
 
 To see all other options please refer to the script help.
 
