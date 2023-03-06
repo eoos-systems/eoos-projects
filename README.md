@@ -37,8 +37,8 @@ EOOS has deep elaborated projects each for exactly one platform. These projects 
 as git submodules and have well defined modularity that means each EOOS project contains software 
 modules included as git submodules as well. 
 
-Thus, before you start to develop your first application, you must build an appropriate EOOS project 
-for a platform you would like to develop your product.
+Thus, before you start to develop your first application, you have to build an appropriate EOOS project 
+for a operating system you would like to develop your product.
 
 
 
@@ -99,8 +99,8 @@ REPOSITORY/EOOS/
 
 #### Build EOOS Project
 
-Before developing your own application based on EOOS, you have to build an appropriate 
-EOOS project for operating system you use. Detailed How-to Build Project chapters are 
+Before developing your own application based on EOOS, you have to build an appropriate EOOS project 
+for operating system you use and install EOOS on it. Detailed How-to Build Project chapters are 
 written for each project in its root *README.md* files that you can find here:
 
 - **[How-to Build EOOS Project for POSIX](https://gitflic.ru/project/baigudin-software/eoos-project-if-posix/blob?file=README.md)**
@@ -116,3 +116,53 @@ can be modified for your needs. Detailed How-to Build Sample Applications chapte
 in root *README.md* files that you can find here:
 
 - **[How-to Build Sample Applications](https://gitflic.ru/project/baigudin-software/eoos-project-sample-applications/blob?file=README.md)**
+
+
+
+
+## For EOOS Developers
+
+This chapter describes a few hit for developers who would like to be involved in EOOS developing process.
+
+EOOS developing process is besed on the `develop` branch which points to appropriate `master` branches 
+of sub-repositories. Also, main developing git service is [GitFlic](https://gitflic.ru/project/baigudin-software/eoos-projects)
+with a mirror on [GitHub](https://github.com/baigudin-software/eoos-projects). To automate all the agreements and 
+to simplify initialization of the git repositories for development, we have create a `Repository.py` script that 
+does all routine work for you here in `script/python` directory.
+
+
+
+#### Prepare Git Repository
+
+This chapter describes common approach for a system terminal, which can be different depending on 
+operating system you use. And to generalize the approach here, we will give examples for *Bash* 
+that can be executed on Windows and on Linux.
+
+###### 1. Create an empty directory somewhere on your disk
+
+For instance we will create REPOSITORY directory.
+
+```
+$ mkdir REPOSITORY
+$ cd REPOSITORY
+```
+
+###### 2. Clone this repository
+
+For instance we will clone it to EOOS-DEV directory by SSH.
+
+```
+REPOSITORY$ git clone --branch master git@gitflic.ru:baigudin-software/eoos-projects.git EOOS-PROJECTS
+```
+
+###### 3. Initialize this repository for development
+
+As we mention above, have just to execute the script.
+
+```
+REPOSITORY$ cd EOOS-PROJECTS/scripts/python
+REPOSITORY/EOOS-PROJECTS/scripts/python$ python --init
+```
+
+All is done. The repository and all the sub-repositories are ready to develop on them.
+
