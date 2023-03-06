@@ -169,6 +169,6 @@ REPOSITORY/EOOS-PROJECTS/scripts/python$ python --init
 To see other possible options please refer to the script help.
 
 ```
-REPOSITORY/EOOS-PROJECTS/scripts/python$ python -h`
+REPOSITORY/EOOS-PROJECTS/scripts/python$ python -h
 ```
 
