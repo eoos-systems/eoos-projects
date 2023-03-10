@@ -33,11 +33,13 @@ Quality of EOOS Automotive:
 
 ### For Users
 
-Before you start to develop your first application based on EOOS, we want you to know that EOOS is 
-not one project which can be built for a platform based on some compiler global defines – no, 
-EOOS has deep elaborated projects each for exactly one platform. These projects are included 
-as git submodules and have well defined modularity that means each EOOS project contains software 
-modules included as git submodules as well. 
+This chapter describes a way how to start developing your own application based on EOOS.
+
+And before you start, we want you to know that EOOS is not one project which can be built 
+for a platform based on some compiler global defines – no, EOOS has deep elaborated projects 
+each for exactly one platform. These projects are included as git submodules and have well 
+defined modularity that means each EOOS project contains software modules included as 
+git submodules as well. 
 
 Thus, before you start to develop your first application, you have to build an appropriate EOOS project 
 for a operating system you would like to develop your product.
