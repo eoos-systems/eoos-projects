@@ -122,22 +122,23 @@ in root *README.md* files that you can find here:
 
 ## For Developers
 
-This chapter describes a few hit for developers who would like to be involved in EOOS developing process.
+This chapter describes a few hits for developers who would like to be involved in EOOS developing process.
 
-EOOS developing process is based on the `develop` branch which points to appropriate `master` branches 
-of sub-repositories. Also, main git service for developing is [GitFlic](https://gitflic.ru/project/baigudin-software/eoos-projects)
-with a mirror on [GitHub](https://github.com/baigudin-software/eoos-projects). To automate all the agreements and 
-to simplify initialization of the git repositories for development, we have create a `Repository.py` script that 
-does all routine work for you here in `script/python` directory.
+EOOS developing process is based on the `develop` branch of this repository which points to 
+appropriate `master` branches of the sub-repositories. Also, main git service for developing is 
+[GitFlic](https://gitflic.ru/project/baigudin-software/eoos-projects) with a mirror on 
+[GitHub](https://github.com/baigudin-software/eoos-projects). To automate all the agreements and 
+to simplify initialization of the git repositories for development, we have create a `Repository.py` script 
+that does all routine work for you here in `script/python` directory.
 
-**NOTE:**  Please, follow "Prerequisites on *your OS*" to install all environment you need to successfully 
-initialize the repositories and develop on them by the link given in the previous chapter for appropriate 
-EOOS project.
+**NOTE:**  Please, follow the Prerequisites on *your OS* chapters to install all environment you need 
+to successfully initialize the repositories and to develop on them by the link given in the previous chapter 
+for appropriate EOOS project.
 
 #### Prepare Git Repository
 
 This chapter describes common approach for a system terminal, which can be different depending on 
-operating system you use. And to generalize the approach here, we will give examples for *Bash* 
+an operating system you use. And to generalize the approach here, we will give examples for *Bash* 
 that can be executed on Windows and on Linux.
 
 ###### 1. Create an empty directory somewhere on your disk
@@ -159,7 +160,7 @@ REPOSITORY$ git clone git@gitflic.ru:baigudin-software/eoos-projects.git
 
 ###### 3. Initialize this repository for development
 
-As we mention above, have just to execute the script.
+As we mention above, we just have to execute the script.
 
 ```
 REPOSITORY$ cd eoos-projects/scripts/python
