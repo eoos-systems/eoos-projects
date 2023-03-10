@@ -163,7 +163,7 @@ As we mention above, have just to execute the script.
 
 ```
 REPOSITORY$ cd eoos-projects/scripts/python
-REPOSITORY/eoos-projects/scripts/python$ python --init
+REPOSITORY/eoos-projects/scripts/python$ python Repository.py --init
 ```
 
 **All is done!** The repository and all the sub-repositories are ready to develop on them.
@@ -171,6 +171,6 @@ REPOSITORY/eoos-projects/scripts/python$ python --init
 To see other possible options please refer to the script help.
 
 ```
-REPOSITORY/eoos-projects/scripts/python$ python -h
+REPOSITORY/eoos-projects/scripts/python$ python Repository.py --help
 ```
 
