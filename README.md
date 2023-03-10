@@ -31,6 +31,8 @@ Quality of EOOS Automotive:
 
 ## Getting Started
 
+### For Users
+
 Before you start to develop your first application based on EOOS, we want you to know that EOOS is 
 not one project which can be built for a platform based on some compiler global defines – no, 
 EOOS has deep elaborated projects each for exactly one platform. These projects are included 
@@ -120,7 +122,7 @@ in root *README.md* files that you can find here:
 
 
 
-## For Developers
+### For Developers
 
 This chapter describes a few hits for developers who would like to be involved in EOOS developing process.
 
