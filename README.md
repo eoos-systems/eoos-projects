@@ -173,15 +173,17 @@ This step is important as the script checks current directory set to its locatio
 REPOSITORY$ cd eoos-projects/scripts/python
 ```
 
-###### 4. Initialize this repository for development
+###### 4. Initialize this repository
 
-Execute the script to initialize all repositories.
+Execute the script to initialize all repositories for development.
 
 ```
 REPOSITORY/eoos-projects/scripts/python$ python Begin.py --init
 ```
 
 **All is done!** The repository and all the sub-repositories are ready to develop on them.
+
+###### 5. See other options if it needs
 
 To see other possible options please refer to the script help.
 
@@ -206,7 +208,7 @@ This step is important as the script checks current directory set to its locatio
 REPOSITORY$ cd eoos-projects/scripts/python
 ```
 
-###### 3. Build and test EOOS
+###### 2. Build and test EOOS
 
 The `Integrate.py` script has several input arguments, but the most important execution 
 commant is given below. This command builds and tests EOOS for all possible configurations, installs
@@ -216,8 +218,10 @@ EOOS on your host, and builds and runs EOOS sample applications checking their c
 REPOSITORY/eoos-projects/scripts/python$ python Integrate.py --build ALL
 ```
 
-Zero return value by the script can be treeted by CI/CD server as EOOS is ready to be integrated for
-appropriate operating system.
+**All is built and tested!** Zero return value by the script can be treeted by CI/CD server 
+as EOOS is ready to be integrated for appropriate operating system.
+
+###### 3. See other options if it needs
 
 To see other possible options please refer to the script help.
 
