@@ -31,6 +31,7 @@ Quality of EOOS Automotive:
 
 ## Getting Started
 
+
 ### For Users
 
 This chapter describes a way how to start developing your own application based on EOOS.
