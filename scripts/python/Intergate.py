@@ -4,7 +4,7 @@
 # @copyright 2023, Sergey Baigudin, Baigudin Software
 
 import sys
-from repository.Program import Program
+from intergate.Program import Program
 
 
 def main():

@@ -133,7 +133,7 @@ EOOS developing process is based on the `develop` branch of this repository whic
 appropriate `master` branches of the sub-repositories. Also, main git service for developing is 
 [GitFlic](https://gitflic.ru/project/baigudin-software/eoos-projects) with a mirror on 
 [GitHub](https://github.com/baigudin-software/eoos-projects). To automate all the agreements and 
-to simplify initialization of the git repositories for development, we have create a `Repository.py` script 
+to simplify initialization of the git repositories for development, we have create a `Begin.py` script 
 that does all routine work for you here in `script/python` directory.
 
 **NOTE:**  Please, follow the Prerequisites on *your OS* chapters to install all environment you need 
@@ -169,7 +169,7 @@ As we mention above, we just have to execute the script.
 
 ```
 REPOSITORY$ cd eoos-projects/scripts/python
-REPOSITORY/eoos-projects/scripts/python$ python Repository.py --init
+REPOSITORY/eoos-projects/scripts/python$ python Begin.py --init
 ```
 
 **All is done!** The repository and all the sub-repositories are ready to develop on them.
@@ -177,6 +177,6 @@ REPOSITORY/eoos-projects/scripts/python$ python Repository.py --init
 To see other possible options please refer to the script help.
 
 ```
-REPOSITORY/eoos-projects/scripts/python$ python Repository.py --help
+REPOSITORY/eoos-projects/scripts/python$ python Begin.py --help
 ```
 
