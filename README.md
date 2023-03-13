@@ -199,6 +199,8 @@ To be sure any system depending changes made correctly we have to build and to t
 on all operating systems EOOS is being developed for. To simplify this process, we have created 
 the `Integrate.py` script that does all for you on a host operating system it runs on.
 
+**NOTE:** Run CMD in *Run as administrator* mode to be able to install EOOS on Windows and 
+execute the commads below.
 
 ###### 1. Go to scripts directory
 
