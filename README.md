@@ -132,19 +132,21 @@ This chapter describes a few hits for developers who would like to be involved i
 EOOS developing process is based on the `develop` branch of this repository which points to 
 appropriate `master` branches of the sub-repositories. Also, main git service for developing is 
 [GitFlic](https://gitflic.ru/project/baigudin-software/eoos-projects) with a mirror on 
-[GitHub](https://github.com/baigudin-software/eoos-projects). To automate all the agreements and 
-to simplify initialization of the git repositories for development, we have create a `Begin.py` script 
-that does all routine work for you here in `script/python` directory.
+[GitHub](https://github.com/baigudin-software/eoos-projects). To automate some routine work like 
+repository initialization or integration, we have developed a few *Python* scripts that are 
+located in `scripts/python` directory.
 
 **NOTE:**  Please, follow the Prerequisites on *your OS* chapters to install all environment you need 
-to successfully initialize the repositories and to develop on them by the link given in the previous chapter 
+to successfully run the scripts and to develop EOOS by the link given in the previous chapter 
 for appropriate EOOS project.
+
+
 
 #### Prepare Git Repository
 
-This chapter describes common approach for a system terminal, which can be different depending on 
-an operating system you use. And to generalize the approach here, we will give examples for *Bash* 
-that can be executed on Windows and on Linux.
+To simplify initialization of the git repositories for development purpose, we have created 
+the `Begin.py` script that does all routine work for you.
+
 
 ###### 1. Create an empty directory somewhere on your disk
 
@@ -163,12 +165,19 @@ We strongly recommend to do it by SSH.
 REPOSITORY$ git clone git@gitflic.ru:baigudin-software/eoos-projects.git
 ```
 
-###### 3. Initialize this repository for development
+###### 3. Go to scripts directory
 
-As we mention above, we just have to execute the script.
+This step is important as the script checks current directory set to its location.
 
 ```
 REPOSITORY$ cd eoos-projects/scripts/python
+```
+
+###### 4. Initialize this repository for development
+
+Execute the script to initialize all repositories.
+
+```
 REPOSITORY/eoos-projects/scripts/python$ python Begin.py --init
 ```
 
@@ -180,3 +189,38 @@ To see other possible options please refer to the script help.
 REPOSITORY/eoos-projects/scripts/python$ python Begin.py --help
 ```
 
+
+
+#### Integrate Git Baranches
+
+To be sure any system depending changes made correctly we have to build and to test them 
+on all operating systems EOOS is being developed for. To simplify this process, we have created 
+the `Integrate.py` script that does all for you on a host operating system it runs on.
+
+
+###### 1. Go to scripts directory
+
+This step is important as the script checks current directory set to its location.
+
+```
+REPOSITORY$ cd eoos-projects/scripts/python
+```
+
+###### 3. Build and test EOOS
+
+The `Integrate.py` script has several input arguments, but the most important execution 
+commant is given below. This command builds and tests EOOS for all possible configurations, installs
+EOOS on your host, and builds and runs EOOS sample applications checking their correct execution.
+
+```
+REPOSITORY/eoos-projects/scripts/python$ python Integrate.py --build ALL
+```
+
+Zero return value by the script can be treeted by CI/CD server as EOOS is ready to be integrated for
+appropriate operating system.
+
+To see other possible options please refer to the script help.
+
+```
+REPOSITORY/eoos-projects/scripts/python$ python Integrate.py --help
+```

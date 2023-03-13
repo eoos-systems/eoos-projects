@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-# @file      Intergate.py
+# @file      Integrate.py
 # @author    Sergey Baigudin, sergey@baigudin.software
 # @copyright 2023, Sergey Baigudin, Baigudin Software
 
 import sys
-from intergate.Program import Program
+from integrate.Program import Program
 
 
 def main():
