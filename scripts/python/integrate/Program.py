@@ -51,7 +51,7 @@ class Program():
             return
         Message.out(f'Run EOOS Unit Tests for "{config}" configuration', Message.INF, True)
         os.chdir(f'{self.__get_path_to_eoos_dir()}/scripts/python')
-        ret = subprocess.run([self.__args.interpreter, 'Make.py', '-c', '-b', 'ALL', '-r', '--config', config, '-j', '8']).returncode
+        ret = subprocess.run([self.__args.interpreter, 'Make.py', '-c', '-b', 'ALL', '-r', '--config', config]).returncode
         os.chdir(self.__PATH_FROM_A_PROJECT_DIR)
         if ret != 0:
             raise Exception(f'EOOS build error with exit code [{ret}]')
@@ -62,7 +62,7 @@ class Program():
             return    
         Message.out(f'Install EOOS for "{config}" configuration', Message.INF, True)
         os.chdir(f'{self.__get_path_to_eoos_dir()}/scripts/python')
-        ret = subprocess.run([self.__args.interpreter, 'Make.py', '-c', '-b', 'EOOS', '--install', '--config', config, '-j', '8']).returncode
+        ret = subprocess.run([self.__args.interpreter, 'Make.py', '-c', '-b', 'EOOS', '--install', '--config', config]).returncode
         os.chdir(self.__PATH_FROM_A_PROJECT_DIR)
         if ret != 0:
             raise Exception(f'EOOS install error with exit code [{ret}]')
@@ -73,7 +73,7 @@ class Program():
             return    
         Message.out(f'Run EOOS Sample Applications for "{config}" configuration', Message.INF, True)
         os.chdir(f'{self.__PATH_TO_APPS_DIR}/scripts/python')
-        ret = subprocess.run([self.__args.interpreter, 'Make.py', '-c', '-b', '-r', '--config', config, '-j', '8']).returncode
+        ret = subprocess.run([self.__args.interpreter, 'Make.py', '-c', '-b', '-r', '--config', config]).returncode
         os.chdir(self.__PATH_FROM_A_PROJECT_DIR)
         if ret != 0:
             raise Exception(f'APP build error with exit code [{ret}]')

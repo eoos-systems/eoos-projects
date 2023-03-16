@@ -4,7 +4,7 @@
 # @copyright 2023, Sergey Baigudin, Baigudin Software
 
 import sys
-from colorama import just_fix_windows_console
+from common.Os import Os
 
 class Message:
 
@@ -15,24 +15,30 @@ class Message:
 
     @staticmethod
     def out(string, status=None, is_block=None):
-        just_fix_windows_console()
-        color = Message.__COLOR_END
+        color_bgn = Message.__COLOR_END
+        color_end = Message.__COLOR_END
+
         if status == Message.OK:
-            color = Message.__COLOR_OK
+            color_bgn = Message.__COLOR_OK
         elif  status == Message.ERR:
-            color = Message.__COLOR_ERR
+            color_bgn = Message.__COLOR_ERR
         elif status == Message.INF:
-            color = Message.__COLOR_INF
+            color_bgn = Message.__COLOR_INF
         elif status == Message.NOR:
-            color = Message.__COLOR_NOR
+            color_bgn = Message.__COLOR_NOR
         else:
-            color = Message.__COLOR_END
+            color_bgn = Message.__COLOR_END
+
+        if Os.is_win32():
+            color_bgn = ''
+            color_end = ''            
+
         if is_block is not True:
-            print(color + string + Message.__COLOR_END, flush=True)
+            print(color_bgn + string + color_end, flush=True)
         else:
-            print(color + '-------------------------------------------------------------------------------' + Message.__COLOR_END, flush=True)
-            print(color + ' ' + string + Message.__COLOR_END, flush=True)
-            print(color + '-------------------------------------------------------------------------------' + Message.__COLOR_END, flush=True)
+            print(color_bgn + '-------------------------------------------------------------------------------' + color_end, flush=True)
+            print(color_bgn + ' ' + string + color_end, flush=True)
+            print(color_bgn + '-------------------------------------------------------------------------------' + color_end, flush=True)
             
 
     __COLOR_OK  = '\033[32m'
