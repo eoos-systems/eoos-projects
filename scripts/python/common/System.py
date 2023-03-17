@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-# @file      Os.py
+# @file      System.py
 # @author    Sergey Baigudin, sergey@baigudin.software
 # @copyright 2023, Sergey Baigudin, Baigudin Software
 
 from sys import platform
 
-class Os:
+class System:
 
     @staticmethod
     def is_posix():

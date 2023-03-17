@@ -9,7 +9,7 @@ import argparse
 import shutil
 import subprocess
 from common.Message import Message
-from common.Os import Os
+from common.System import System
 
 class Program():
 
@@ -108,9 +108,9 @@ class Program():
 
 
     def __get_path_to_eoos_dir(self):
-        if Os.is_posix():
+        if System.is_posix():
             return f'./../../projects/eoos-if-posix'
-        elif Os.is_win32():
+        elif System.is_win32():
             return f'./../../projects/eoos-if-win32'
         else:
             raise Exception(f'Unknown OS to build')
@@ -118,7 +118,7 @@ class Program():
 
     def __parse_args(self):
         pyVer = ''
-        if Os.is_posix():
+        if System.is_posix():
             pyVer = '3'
         parser = argparse.ArgumentParser(prog=self.__PROGRAM_NAME\
             , description='Runs the EOOS intergation build'\

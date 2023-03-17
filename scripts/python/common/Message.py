@@ -4,7 +4,7 @@
 # @copyright 2023, Sergey Baigudin, Baigudin Software
 
 import sys
-from common.Os import Os
+from common.System import System
 
 class Message:
 
@@ -29,7 +29,7 @@ class Message:
         else:
             color_bgn = Message.__COLOR_END
 
-        if Os.is_win32():
+        if System.is_win32():
             color_bgn = ''
             color_end = ''            
 
