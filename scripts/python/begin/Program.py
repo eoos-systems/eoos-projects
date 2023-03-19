@@ -6,11 +6,15 @@
 import os
 import time
 import argparse
-import shutil
 import subprocess
+
+from common.IProgram import IProgram
 from common.Message import Message
 
-class Program():
+class Program(IProgram):
+    """
+    Program.
+    """
 
     def __init__(self):
         self.__args = None

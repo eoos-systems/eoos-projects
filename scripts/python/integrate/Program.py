@@ -8,10 +8,16 @@ import time
 import argparse
 import shutil
 import subprocess
-from common.Message import Message
-from common.System import System
 
-class Program():
+from abc import ABC, abstractmethod
+from common.IProgram import IProgram
+from common.Message import Message
+
+
+class Program(IProgram):
+    """
+    Abstatact base program.
+    """
 
     def __init__(self):
         self.__args = None
@@ -46,11 +52,27 @@ class Program():
             return error
 
 
+    @abstractmethod
+    def _get_path_to_eoos_dir(self):
+        """
+        Returns path to an eoos project directory.
+        """
+        pass
+
+
+    @abstractmethod
+    def _get_name_interpreter(self):
+        """
+        Returns python interpreter name.
+        """
+        pass
+
+
     def __do_run_eoos_ut(self, config):
         if self.__args.build != 'EOOS' and self.__args.build != 'ALL':
             return
         Message.out(f'Run EOOS Unit Tests for "{config}" configuration', Message.INF, True)
-        os.chdir(f'{self.__get_path_to_eoos_dir()}/scripts/python')
+        os.chdir(f'{self._get_path_to_eoos_dir()}/scripts/python')
         ret = subprocess.run([self.__args.interpreter, 'Make.py', '-c', '-b', 'ALL', '-r', '--config', config]).returncode
         os.chdir(self.__PATH_FROM_A_PROJECT_DIR)
         if ret != 0:
@@ -61,7 +83,7 @@ class Program():
         if self.__args.no_install is True:
             return    
         Message.out(f'Install EOOS for "{config}" configuration', Message.INF, True)
-        os.chdir(f'{self.__get_path_to_eoos_dir()}/scripts/python')
+        os.chdir(f'{self._get_path_to_eoos_dir()}/scripts/python')
         ret = subprocess.run([self.__args.interpreter, 'Make.py', '-c', '-b', 'EOOS', '--install', '--config', config]).returncode
         os.chdir(self.__PATH_FROM_A_PROJECT_DIR)
         if ret != 0:
@@ -80,9 +102,9 @@ class Program():
 
 
     def __do_clean(self):
-        if os.path.isdir(f'{self.__get_path_to_eoos_dir()}/build'):
+        if os.path.isdir(f'{self._get_path_to_eoos_dir()}/build'):
             Message.out(f'[BUILD] Deleting EOOS "build" directory...', Message.INF)        
-            shutil.rmtree(f'{self.__get_path_to_eoos_dir()}/build')
+            shutil.rmtree(f'{self._get_path_to_eoos_dir()}/build')
         if os.path.isdir(f'{self.__PATH_TO_APPS_DIR}/build'):
             Message.out(f'[BUILD] Deleting APPS "build" directory...', Message.INF)        
             shutil.rmtree(f'{self.__PATH_TO_APPS_DIR}/build')        
@@ -107,19 +129,7 @@ class Program():
         return True
 
 
-    def __get_path_to_eoos_dir(self):
-        if System.is_posix():
-            return f'./../../projects/eoos-if-posix'
-        elif System.is_win32():
-            return f'./../../projects/eoos-if-win32'
-        else:
-            raise Exception(f'Unknown OS to build')
-
-
     def __parse_args(self):
-        pyVer = ''
-        if System.is_posix():
-            pyVer = '3'
         parser = argparse.ArgumentParser(prog=self.__PROGRAM_NAME\
             , description='Runs the EOOS intergation build'\
             , epilog='(c) 2023, Sergey Baigudin, Baigudin Software' )
@@ -131,7 +141,7 @@ class Program():
             , action='store_true'\
             , help='do not install EOOS on OS')
         parser.add_argument('--interpreter'\
-            , default=f'python{pyVer}'\
+            , default=self._get_name_interpreter()\
             , metavar='PYTHON_EXECUTABLE'\
             , help='set Python interpreter')
         parser.add_argument('--version'\
