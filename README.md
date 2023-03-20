@@ -72,7 +72,7 @@ REPOSITORY$ git clone --branch master git@gitflic.ru:baigudin-software/eoos-proj
 
 ###### 3. Initialize and update all submodules for the repository recursively
 
-As we mention above, this super repository contains sub-repositories, and the sub-repositories also 
+As we mentioned above, this super repository contains sub-repositories, and the sub-repositories also 
 contain sub-repositories. Therefore `--recursive` key must be passed to the git command line.
 
 ```
