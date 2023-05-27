@@ -16,3 +16,7 @@ class ProgramOnPosix(Program):
 
     def _get_name_interpreter(self):
         return 'python3'
+
+
+    def _is_to_run_eoos_ut(self, config, defines):
+        return True

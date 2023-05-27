@@ -16,3 +16,10 @@ class ProgramOnWin32(Program):
 
     def _get_name_interpreter(self):
         return 'python'
+
+
+    def _is_to_run_eoos_ut(self, config, defines):
+        if len(defines) == 0:
+            return True
+        else:
+            return False

@@ -28,13 +28,18 @@ class Program(IProgram):
         error = 0
         try:
             Message.out(f'Welcome to {self.__PROGRAM_NAME}', Message.OK, True)
+            defines = ['EOOS_GLOBAL_NUMBER_OF_MUTEXS=3', 'EOOS_GLOBAL_NUMBER_OF_SEMAPHORES=4', 'EOOS_GLOBAL_NUMBER_OF_THREADS=5']
             self.__parse_args()
             self.__check_run_path()
             self.__print_args()
             self.__do_run_eoos_ut('Release')
+            self.__do_run_eoos_ut('Release', defines)
             self.__do_run_eoos_ut('Debug')
+            self.__do_run_eoos_ut('Debug', defines)
             self.__do_run_eoos_ut('RelWithDebInfo')
+            self.__do_run_eoos_ut('RelWithDebInfo', defines)
             self.__do_run_eoos_ut('MinSizeRel')
+            self.__do_run_eoos_ut('MinSizeRel', defines)            
             self.__do_install_eoos('RelWithDebInfo')
             self.__do_run_eoos_sample_applications('RelWithDebInfo')
         except Exception as e:
@@ -68,12 +73,31 @@ class Program(IProgram):
         pass
 
 
-    def __do_run_eoos_ut(self, config):
+    @abstractmethod
+    def _is_to_run_eoos_ut(self, config, defines):
+        """
+        Tests if `__do_run_eoos_ut` method must be executed.
+        """
+        pass
+
+
+    def __do_run_eoos_ut(self, config, defines=[]):
         if self.__args.build != 'EOOS' and self.__args.build != 'ALL':
             return
-        Message.out(f'Run EOOS Unit Tests for "{config}" configuration', Message.INF, True)
+        if self._is_to_run_eoos_ut(config, defines) is False:
+            return
+        args = [self.__args.interpreter, 'Make.py', '-c', '-b', 'ALL', '-r', '--config', config]
+        args_define = []
+        args_define_message = ''
+        if len(defines) > 0:
+            args_define_message = ' with build global defines'
+            args_define.append('--define')
+            for d in defines:
+                args_define.append(d);
+        args.extend(args_define)
+        Message.out(f'Run EOOS Unit Tests for "{config}" configuration{args_define_message}', Message.INF, True)
         os.chdir(f'{self._get_path_to_eoos_dir()}/scripts/python')
-        ret = subprocess.run([self.__args.interpreter, 'Make.py', '-c', '-b', 'ALL', '-r', '--config', config]).returncode
+        ret = subprocess.run(args).returncode
         os.chdir(self.__PATH_FROM_A_PROJECT_DIR)
         if ret != 0:
             raise Exception(f'EOOS build error with exit code [{ret}]')
@@ -155,6 +179,6 @@ class Program(IProgram):
         Message.out(f'[INFO] Argument NO-INSTALL = {self.__args.no_install}', Message.INF)
  
     __PROGRAM_NAME = 'EOOS Automotive Intergator'
-    __PROGRAM_VERSION = '1.0.0'
+    __PROGRAM_VERSION = '1.1.0'
     __PATH_TO_APPS_DIR = './../../projects/eoos-sample-applications'
     __PATH_FROM_A_PROJECT_DIR = './../../../../scripts/python'    
