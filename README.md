@@ -27,7 +27,7 @@ and HW board design. But nevertheless, EOOS API for all the systems is absolutel
 Quality of EOOS Automotive:
 
 - MISRA C++ and AUTOSAR C++: **0** violations
-- Unit Tests coverage: **96.5%** for POSIX and **94%** for WIN32
+- Unit Tests coverage: **96%** for POSIX and **94%** for WIN32
 
 ---
 
