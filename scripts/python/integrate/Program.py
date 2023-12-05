@@ -28,7 +28,11 @@ class Program(IProgram):
         error = 0
         try:
             Message.out(f'Welcome to {self.__PROGRAM_NAME}', Message.OK, True)
-            defines = ['EOOS_GLOBAL_NUMBER_OF_MUTEXS=3', 'EOOS_GLOBAL_NUMBER_OF_SEMAPHORES=4', 'EOOS_GLOBAL_NUMBER_OF_THREADS=5']
+            defines = [
+                'EOOS_GLOBAL_SYS_NUMBER_OF_MUTEXS=3',
+                'EOOS_GLOBAL_SYS_NUMBER_OF_SEMAPHORES=4',
+                'EOOS_GLOBAL_SYS_NUMBER_OF_THREADS=5'
+            ]
             self.__parse_args()
             self.__check_run_path()
             self.__print_args()
