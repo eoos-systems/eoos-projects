@@ -17,7 +17,7 @@ EOOS Automotive is developed within **ISO C++ standards**, complied with **MISRA
 **AUTOSAR C++14 Coding Guidelines**, and relies on **ISO 26262** that means applications based 
 on EOOS **can be used in critical and safety-related systems**.
 
-For present, EOOS Automotive is available for **POSIX**, **WIN32 API** and **FreeRTOS** operation 
+For present, EOOS Automotive is available for **POSIX**, **WIN32** and **FreeRTOS** APIs of operating 
 systems and has **Sample Applications** for fast start developing new user applications.
 
 This super repository combines only the **POSIX** and **WIN32 API** git repositories.
