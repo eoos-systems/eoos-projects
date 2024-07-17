@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # @file      Program.py
 # @author    Sergey Baigudin, sergey@baigudin.software
-# @copyright 2023, Sergey Baigudin, Baigudin Software
+# @copyright 2023-2024, Sergey Baigudin, Baigudin Software
 
 import os
 import time
@@ -55,16 +55,16 @@ class Program(IProgram):
         Message.out(f'[INFO] Inialize super-repository...', Message.INF)
         subprocess.run(['git', 'checkout', 'develop'])
         subprocess.run(['git', 'submodule', 'update', '--init', '--recursive'])
-        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@gitflic.ru:baigudin-software/eoos-projects.git'])
-        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@github.com:baigudin-software/eoos-projects.git'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@gitflic.ru:eoos-systems/eoos-projects.git'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@github.com:eoos-systems/eoos-projects.git'])
 
 
     def __init_sub_repos(self, suffix_name):
         Message.out(f'[INFO] Inialize EOOS "{suffix_name}" project repositories...', Message.INF)
         os.chdir(f'./projects/eoos-{suffix_name}/')
         subprocess.run(['git', 'checkout', 'master'])
-        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', f'git@gitflic.ru:baigudin-software/eoos-project-{suffix_name}.git'])
-        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', f'git@github.com:baigudin-software/eoos-project-{suffix_name}.git'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', f'git@gitflic.ru:eoos-systems/eoos-project-{suffix_name}.git'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', f'git@github.com:eoos-systems/eoos-project-{suffix_name}.git'])
         os.chdir('./../..')
 
 
@@ -74,32 +74,32 @@ class Program(IProgram):
 
         os.chdir('./codebase/interface/')
         subprocess.run(['git', 'checkout', 'master'])
-        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@gitflic.ru:baigudin-software/eoos-api.git'])
-        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@github.com:baigudin-software/eoos-api.git'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@gitflic.ru:eoos-systems/eoos-api.git'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@github.com:eoos-systems/eoos-api.git'])
         os.chdir('./../..')
 
         os.chdir('./codebase/library/')
         subprocess.run(['git', 'checkout', 'master'])
-        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@gitflic.ru:baigudin-software/eoos-library.git'])
-        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@github.com:baigudin-software/eoos-library.git'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@gitflic.ru:eoos-systems/eoos-library.git'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@github.com:eoos-systems/eoos-library.git'])
         os.chdir('./../..')
 
         os.chdir('./codebase/system/')
         subprocess.run(['git', 'checkout', 'master'])
-        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', f'git@gitflic.ru:baigudin-software/eoos-system-{suffix_name}.git'])
-        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', f'git@github.com:baigudin-software/eoos-system-{suffix_name}.git'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', f'git@gitflic.ru:eoos-systems/eoos-system-{suffix_name}.git'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', f'git@github.com:eoos-systems/eoos-system-{suffix_name}.git'])
         os.chdir('./../..')
 
         os.chdir('./codebase/tests/')
         subprocess.run(['git', 'checkout', 'master'])
-        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@gitflic.ru:baigudin-software/eoos-tests.git'])
-        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@github.com:baigudin-software/eoos-tests.git'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@gitflic.ru:eoos-systems/eoos-tests.git'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@github.com:eoos-systems/eoos-tests.git'])
         os.chdir('./../..')
 
         os.chdir('./scripts/')
         subprocess.run(['git', 'checkout', 'master'])
-        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@gitflic.ru:baigudin-software/eoos-scripts.git'])
-        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@github.com:baigudin-software/eoos-scripts.git'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@gitflic.ru:eoos-systems/eoos-scripts.git'])
+        subprocess.run(['git', 'remote', 'set-url', 'origin', '--push', '--add', 'git@github.com:eoos-systems/eoos-scripts.git'])
         os.chdir('./..')
         os.chdir('./../..')
 
@@ -132,7 +132,7 @@ class Program(IProgram):
     def __parse_args(self):
         parser = argparse.ArgumentParser(prog=self.__PROGRAM_NAME\
             , description='Proceses EOOS Projects git repository'\
-            , epilog='(c) 2023, Sergey Baigudin, Baigudin Software')
+            , epilog='(c) 2023-2024, Sergey Baigudin, Baigudin Software')
         parser.add_argument('--init'\
             , action='store_true'\
             , help='initialize just cloned repository to develop on it')
@@ -149,4 +149,4 @@ class Program(IProgram):
 
 
     __PROGRAM_NAME = 'EOOS Automotive Repository Processor'
-    __PROGRAM_VERSION = '1.0.0'    
+    __PROGRAM_VERSION = '1.1.0'
