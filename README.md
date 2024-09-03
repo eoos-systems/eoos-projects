@@ -70,7 +70,7 @@ $ cd REPOSITORY
 For instance we will clone it to EOOS directory by SSH.
 
 ```
-REPOSITORY$ git clone --branch master git@gitflic.ru:baigudin-software/eoos-projects.git EOOS
+REPOSITORY$ git clone --branch master git@gitflic.ru:eoos-systems/eoos-projects.git EOOS
 ```
 
 ###### 3. Initialize and update all submodules for the repository recursively
@@ -99,9 +99,9 @@ REPOSITORY/EOOS/
     └── eoos-sample-applications
 ```
 
-- **[eoos-if-posix](https://gitflic.ru/project/baigudin-software/eoos-project-if-posix)** - is EOOS project for POSIX based operating systems.
-- **[eoos-if-win32](https://gitflic.ru/project/baigudin-software/eoos-project-if-win32)** - is EOOS project for WIN32 API based operating systems.
-- **[eoos-sample-applications](https://gitflic.ru/project/baigudin-software/eoos-project-sample-applications)** - is cross-platform sample applications.
+- **[eoos-if-posix](https://gitflic.ru/project/eoos-systems/eoos-project-if-posix)** - is EOOS project for POSIX based operating systems.
+- **[eoos-if-win32](https://gitflic.ru/project/eoos-systems/eoos-project-if-win32)** - is EOOS project for WIN32 API based operating systems.
+- **[eoos-sample-applications](https://gitflic.ru/project/eoos-systems/eoos-project-sample-applications)** - is cross-platform sample applications.
 
 
 
@@ -111,8 +111,8 @@ Before developing your own application based on EOOS, you have to build an appro
 for operating system you use and install EOOS on it. Detailed How-to Build Project chapters are 
 written for each project in its root *README.md* files that you can find here:
 
-- **[How-to Build EOOS Project for POSIX](https://gitflic.ru/project/baigudin-software/eoos-project-if-posix/blob?file=README.md)**
-- **[How-to Build EOOS Project for WIN32](https://gitflic.ru/project/baigudin-software/eoos-project-if-win32/blob?file=README.md)**
+- **[How-to Build EOOS Project for POSIX](https://gitflic.ru/project/eoos-systems/eoos-project-if-posix/blob/?file=README.md)**
+- **[How-to Build EOOS Project for WIN32](https://gitflic.ru/project/eoos-systems/eoos-project-if-win32/blob/?file=README.md)**
 
 
 
@@ -123,7 +123,7 @@ Sample Applications, and *Hello World* especially. Thus, the Sample Applications
 can be modified for your needs. Detailed How-to Build Sample Applications chapter is written 
 in root *README.md* files that you can find here:
 
-- **[How-to Build Sample Applications](https://gitflic.ru/project/baigudin-software/eoos-project-sample-applications/blob?file=README.md)**
+- **[How-to Build Sample Applications](https://gitflic.ru/project/eoos-systems/eoos-project-sample-applications/blob/?file=README.md)**
 
 
 
@@ -134,8 +134,8 @@ This chapter describes a few hits for developers who would like to be involved i
 
 EOOS developing process is based on the `develop` branch of this repository which points to 
 appropriate `master` branches of the sub-repositories. Also, main git service for developing is 
-[GitFlic](https://gitflic.ru/project/baigudin-software/eoos-projects) with a mirror on 
-[GitHub](https://github.com/baigudin-software/eoos-projects). To automate some routine work like 
+[GitFlic](https://gitflic.ru/project/eoos-systems/eoos-projects) with a mirror on 
+[GitHub](https://github.com/eoos-systems/eoos-projects). To automate some routine work like 
 repository initialization or integration, we have developed a few *Python* scripts that are 
 located in `scripts/python` directory.
 
@@ -165,7 +165,7 @@ $ cd REPOSITORY
 We strongly recommend to do it by SSH.
 
 ```
-REPOSITORY$ git clone git@gitflic.ru:baigudin-software/eoos-projects.git
+REPOSITORY$ git clone git@gitflic.ru:eoos-systems/eoos-projects.git
 ```
 
 ###### 3. Go to scripts directory
