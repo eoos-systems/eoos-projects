@@ -8,7 +8,7 @@ from sys import platform
 class System:
 
     @staticmethod
-    def is_posix():
+    def is_linux():
         return platform == 'linux' or platform == 'linux2'
 
     @staticmethod

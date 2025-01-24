@@ -1,14 +1,21 @@
 #!/usr/bin/env python3
 # @file      ProgramOnWin32.py
 # @author    Sergey Baigudin, sergey@baigudin.software
-# @copyright 2023, Sergey Baigudin, Baigudin Software
+# @copyright 2023-2025, Sergey Baigudin, Baigudin Software
 
 from integrate.Program import Program
+from common.System import System
 
 class ProgramOnWin32(Program):
     """
     Program on WIN32.
     """
+
+    def __init__(self, args):
+        if System.is_win32() is not True:
+            raise Exception(f'Unsuppoted host OS')
+        super().__init__(args)
+
 
     def _get_path_to_eoos_dir(self):
         return f'./../../projects/eoos-if-win32'

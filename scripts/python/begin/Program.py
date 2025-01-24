@@ -31,13 +31,13 @@ class Program(IProgram):
             if self.__args.init is True:
                 self.__init_repo()
                 self.__init_sub_repos('if-posix')
-                self.__init_sub_sub_repos('if-posix')                
+                self.__init_sub_sub_repos('if-posix')
                 self.__init_sub_repos('if-win32')
-                self.__init_sub_sub_repos('if-win32')                
-                self.__init_sub_repos('sample-applications')                
+                self.__init_sub_sub_repos('if-win32')
+                self.__init_sub_repos('sample-applications')
                 self.__init_print_status()
         except Exception as e:
-            Message.out(f'[EXCEPTION] {e}', Message.ERR)        
+            Message.out(f'[EXCEPTION] {e}', Message.ERR)
             error = 1
         finally:
             status = Message.OK
@@ -69,7 +69,7 @@ class Program(IProgram):
 
 
     def __init_sub_sub_repos(self, suffix_name):
-        Message.out(f'[INFO] Inialize EOOS "{suffix_name}" project sub-repositories...', Message.INF)    
+        Message.out(f'[INFO] Inialize EOOS "{suffix_name}" project sub-repositories...', Message.INF)
         os.chdir(f'./projects/eoos-{suffix_name}/')
 
         os.chdir('./codebase/interface/')
@@ -108,7 +108,7 @@ class Program(IProgram):
         Message.out(f'[INFO] Repositories status:', Message.INF)
         subprocess.run(['git', 'status', '-b', '-s'])
         subprocess.run(['git', 'submodule', 'foreach', '--recursive', 'git', 'status', '-b', '-s'])
-        
+
         Message.out(f'[INFO] Remote values:', Message.INF)
         subprocess.run(['git', 'remote', '-v'])
         subprocess.run(['git', 'submodule', 'foreach', '--recursive', 'git', 'remote', '-v'])
@@ -140,13 +140,13 @@ class Program(IProgram):
             , action='version'\
             , version=f'%(prog)s {self.__PROGRAM_VERSION}')
         self.__args = parser.parse_args()
- 
- 
+
+
     def __print_args(self):
         if self.__args.init is True:
-            Message.out(f'[INFO] Argument INIT = {self.__args.init}', Message.INF)    
+            Message.out(f'[INFO] Argument INIT = {self.__args.init}', Message.INF)
         return
 
 
-    __PROGRAM_NAME = 'EOOS Automotive Repository Processor'
+    __PROGRAM_NAME = 'EOOS Safe Repository Processor'
     __PROGRAM_VERSION = '1.1.0'
