@@ -88,6 +88,8 @@ class Program(IProgram):
             for d in defines:
                 args_define.append(d);
         args.extend(args_define)
+        if self.__get_args().jobs is not None:
+            args.extend(['-j', str(self.__get_args().jobs)])
         Message.out(f'Run EOOS Unit Tests for "{config}" configuration{args_define_message}', Message.INF, True)
         os.chdir(f'{self._get_path_to_eoos_dir()}/scripts/python')
         ret = subprocess.run(args).returncode

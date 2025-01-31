@@ -76,6 +76,10 @@ class Integrate:
             , default='ALL' \
             , help='compile an appropriate target of projects' \
         )
+        parser.add_argument('-j', '--jobs' \
+            , type=int \
+            , help='set number of parallel jobs to build' \
+        )
         parser.add_argument('--no-install' \
             , action='store_true' \
             , help='do not install EOOS on OS' \
@@ -104,12 +108,19 @@ class Integrate:
 
 
     def __print_args(self):
+        if self.__get_args().eoos is not None:
+            Message.out(f'[INFO] Argument EOOS: {self.__get_args().eoos}', Message.INF)
         Message.out(f'[INFO] Argument BUILD = {self.__args.build}', Message.INF)
+        if self.__get_args().jobs is not None:
+            Message.out(f'[INFO] Argument JOBS: {self.__get_args().jobs}', Message.INF)
         Message.out(f'[INFO] Argument NO-INSTALL = {self.__args.no_install}', Message.INF)
+        if self.__get_args().interpreter is not None:
+            Message.out(f'[INFO] Argument INTERPRETER: {self.__get_args().interpreter}', Message.INF)
+
 
 
     __PROGRAM_NAME = 'EOOS Safe Intergator'
-    __PROGRAM_VERSION = '1.1.0'
+    __PROGRAM_VERSION = '2.0.0'
 
 
 def main():

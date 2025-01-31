@@ -3,26 +3,27 @@
 
 **EOOS copyrights reserved in [Rospatent Federal Service for Intellectual Property](https://www1.fips.ru/registers-doc-view/fips_servlet?DB=EVM&DocNumber=2017664105&TypeFile=html), Russian Federation**
 
-This is **super repository** of all the EOOS Safe projects and **main entry point** to build 
+This is **super repository** of all the EOOS Safe projects and **main entry point** to build
 user applications based on an exact EOOS API version for all the platforms.
 
-EOOS Safe is **a set of C++ libraries** for different hardware platforms and operating systems 
-**to develop cross-platform applications** in automotive sphere.
+EOOS Safe is **a set of C++ libraries** for different hardware platforms and operating systems
+**to develop cross-platform applications** for safety-critical systems.
 
-The libraries are developed in **C++98** programming language (ISO/IEC 14882:1998) and support features 
-of **C++11** programming language (ISO/IEC 14882:2011), which allows to consider wide criteria when 
+The libraries are developed in **C++98** programming language (ISO/IEC 14882:1998) and support features
+of **C++11** programming language (ISO/IEC 14882:2011), which allows to consider wide criteria when
 selecting a suitable programming language on initiation step of product development.
 
-EOOS Safe is developed within **ISO C++ standards**, complied with **MISRA C++:2008** and 
-**AUTOSAR C++14 Coding Guidelines**, and relies on **ISO 26262** that means applications based 
+EOOS Safe is developed within **ISO C++ standards**, complied with **MISRA C++:2008** and
+**AUTOSAR C++14 Coding Guidelines**, and relies on **ISO 26262** that means applications based
 on EOOS **can be used in critical and safety-related systems**.
 
-For present, EOOS Safe is available for **POSIX**, **WIN32** and **FreeRTOS** APIs of operating 
-systems and has **Sample Applications** for fast start developing new user applications.
+For present, EOOS Safe is available for **POSIX**, **WIN32**, **FreeRTOS** and **KasperskyOS** APIs
+of operating systems and has **Sample Applications** for fast start developing new user applications.
 
 This super repository combines only the **POSIX** and **WIN32 API** git repositories.
-The **FreeRTOS** git repositories are not here, as they belong to exactly MCU architecture 
-and HW board design. But nevertheless, EOOS API for all the systems is absolutely the same.
+The **FreeRTOS** and **KasperskyOS** git repositories are not here, as they belong to exactly
+processor architecture and HW board design. But nevertheless, EOOS API for all the systems is
+absolutely the same.
 
 Quality of EOOS Safe:
 
@@ -39,21 +40,21 @@ Quality of EOOS Safe:
 
 This chapter describes a way how to start developing your own application based on EOOS.
 
-And before you start, we want you to know that EOOS is not one project which can be built 
-for a platform based on some compiler global defines – no, EOOS has deep elaborated projects 
-each for exactly one platform. These projects are included as git submodules and have well 
-defined modularity that means each EOOS project contains software modules included as 
-git submodules as well. 
+And before you start, we want you to know that EOOS is not one project which can be built
+for a platform based on some compiler global defines – no, EOOS has deep elaborated projects
+each for exactly one platform. These projects are included as git submodules and have well
+defined modularity that means each EOOS project contains software modules included as
+git submodules as well.
 
-Thus, before you start to develop your first application, you have to build an appropriate EOOS project 
+Thus, before you start to develop your first application, you have to build an appropriate EOOS project
 for a operating system you would like to develop your product.
 
 
 
 #### Obtain Git Repository
 
-This chapter describes common approach for a system terminal, which can be different depending on 
-operating system you use. And to generalize the approach here, we will give examples for *Bash* 
+This chapter describes common approach for a system terminal, which can be different depending on
+operating system you use. And to generalize the approach here, we will give examples for *Bash*
 that can be executed on Windows and on Linux.
 
 ###### 1. Create an empty directory somewhere on your disk
@@ -75,7 +76,7 @@ REPOSITORY$ git clone --branch master git@gitflic.ru:eoos-systems/eoos-projects.
 
 ###### 3. Initialize and update all submodules for the repository recursively
 
-As we mentioned above, this super repository contains sub-repositories, and the sub-repositories also 
+As we mentioned above, this super repository contains sub-repositories, and the sub-repositories also
 contain sub-repositories. Therefore `--recursive` key must be passed to the git command line.
 
 ```
@@ -87,8 +88,8 @@ REPOSITORY/EOOS$ git submodule update --init --recursive
 
 #### Repository Structure
 
-This super repository consists of projects located in the directory of the same name. 
-These projects included to the super repository as git submodules. The structure and short 
+This super repository consists of projects located in the directory of the same name.
+These projects included to the super repository as git submodules. The structure and short
 description are given below.
 
 ```
@@ -107,8 +108,8 @@ REPOSITORY/EOOS/
 
 #### Build EOOS Project
 
-Before developing your own application based on EOOS, you have to build an appropriate EOOS project 
-for operating system you use and install EOOS on it. Detailed How-to Build Project chapters are 
+Before developing your own application based on EOOS, you have to build an appropriate EOOS project
+for operating system you use and install EOOS on it. Detailed How-to Build Project chapters are
 written for each project in its root *README.md* files that you can find here:
 
 - **[How-to Build EOOS Project for POSIX](https://gitflic.ru/project/eoos-systems/eoos-project-if-posix/blob/?file=README.md)**
@@ -118,9 +119,9 @@ written for each project in its root *README.md* files that you can find here:
 
 #### Build EOOS Sample Application
 
-To get a start point for developing your own application based on EOOS, you can consider 
-Sample Applications, and *Hello World* especially. Thus, the Sample Applications repository 
-can be modified for your needs. Detailed How-to Build Sample Applications chapter is written 
+To get a start point for developing your own application based on EOOS, you can consider
+Sample Applications, and *Hello World* especially. Thus, the Sample Applications repository
+can be modified for your needs. Detailed How-to Build Sample Applications chapter is written
 in root *README.md* files that you can find here:
 
 - **[How-to Build Sample Applications](https://gitflic.ru/project/eoos-systems/eoos-project-sample-applications/blob/?file=README.md)**
@@ -132,22 +133,22 @@ in root *README.md* files that you can find here:
 
 This chapter describes a few hits for developers who would like to be involved in EOOS developing process.
 
-EOOS developing process is based on the `develop` branch of this repository which points to 
-appropriate `master` branches of the sub-repositories. Also, main git service for developing is 
-[GitFlic](https://gitflic.ru/project/eoos-systems/eoos-projects) with a mirror on 
-[GitHub](https://github.com/eoos-systems/eoos-projects). To automate some routine work like 
-repository initialization or integration, we have developed a few *Python* scripts that are 
+EOOS developing process is based on the `develop` branch of this repository which points to
+appropriate `master` branches of the sub-repositories. Also, main git service for developing is
+[GitFlic](https://gitflic.ru/project/eoos-systems/eoos-projects) with a mirror on
+[GitHub](https://github.com/eoos-systems/eoos-projects). To automate some routine work like
+repository initialization or integration, we have developed a few *Python* scripts that are
 located in `scripts/python` directory.
 
-**NOTE:**  Please, follow the Prerequisites on *your OS* chapters to install all environment you need 
-to successfully run the scripts and to develop EOOS by the link given in the previous chapter 
+**NOTE:**  Please, follow the Prerequisites on *your OS* chapters to install all environment you need
+to successfully run the scripts and to develop EOOS by the link given in the previous chapter
 for appropriate EOOS project.
 
 
 
 #### Prepare Git Repository
 
-To simplify initialization of the git repositories for development purpose, we have created 
+To simplify initialization of the git repositories for development purpose, we have created
 the `Begin.py` script that does all routine work for you.
 
 
@@ -198,12 +199,14 @@ REPOSITORY/eoos-projects/scripts/python$ python Begin.py --help
 
 #### Integrate Git Baranches
 
-To be sure any system depending changes made correctly we have to build and to test them 
-on all operating systems EOOS is being developed for. To simplify this process, we have created 
+To be sure any system depending changes made correctly we have to build and to test them
+on all operating systems EOOS is being developed for. To simplify this process, we have created
 the `Integrate.py` script that does all for you on a host operating system it runs on.
 
-**NOTE:** Run CMD in *Run as administrator* mode to be able to install EOOS on Windows and 
+**NOTE:** Run CMD in *Run as administrator* mode to be able to install EOOS on Windows and
 execute the commads below.
+
+**NOTE:** Running the script in Bash, the script will request *sudo* password to install EOOS on Linux.
 
 ###### 1. Go to scripts directory
 
@@ -215,15 +218,18 @@ REPOSITORY$ cd eoos-projects/scripts/python
 
 ###### 2. Build and test EOOS
 
-The `Integrate.py` script has several input arguments, but the most important execution 
+The `Integrate.py` script has several input arguments, but the most important execution
 commant is given below. This command builds and tests EOOS for all possible configurations, installs
-EOOS on your host, and builds and runs EOOS sample applications checking their correct execution.
+EOOS on your host operating system, and builds and runs EOOS sample applications checking
+their correct execution.
 
 ```
-REPOSITORY/eoos-projects/scripts/python$ python Integrate.py --build ALL
+REPOSITORY/eoos-projects/scripts/python$ python Integrate.py --eoos <EOOS_PROJECT> --build ALL --jobs 8
 ```
 
-**All is built and tested!** Zero return value by the script can be treeted by CI/CD server 
+**NOTE:** Please pay attention you have to set correct EOOS project for `--eoos` argument
+
+**All is built and tested!** Zero return value by the script can be treeted by CI/CD server
 as EOOS is ready to be integrated for appropriate operating system.
 
 ###### 3. See other options if it needs
