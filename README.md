@@ -233,7 +233,7 @@ REPOSITORY/eoos-projects/scripts/python$ python Integrate.py --eoos <EOOS_PROJEC
 
 **NOTE:** Please pay attention you have to set correct EOOS project for `--eoos` argument
 
-**All is built and tested!** Zero return value by the script can be treeted by CI/CD server
+**All is built and tested!** Zero return value by the script can be treated by CI/CD server
 as EOOS is ready to be integrated for appropriate operating system.
 
 ###### 3. See other options if it needs
