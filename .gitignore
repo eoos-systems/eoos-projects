@@ -1,2 +1,5 @@
 # Common files
 __pycache__
+
+# VS Code project files
+.vscode

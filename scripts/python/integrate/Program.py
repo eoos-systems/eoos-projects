@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # @file      Program.py
 # @author    Sergey Baigudin, sergey@baigudin.software
-# @copyright 2023-2025, Sergey Baigudin, Baigudin Software
+# @copyright 2023-2026, Sergey Baigudin, Baigudin Software
 
 import os
 import time
@@ -25,9 +25,9 @@ class Program(IProgram):
 
     def execute(self):
         defines = [
-            'EOOS_GLOBAL_SYS_NUMBER_OF_MUTEXS=3',
-            'EOOS_GLOBAL_SYS_NUMBER_OF_SEMAPHORES=4',
-            'EOOS_GLOBAL_SYS_NUMBER_OF_THREADS=5'
+            'EOOS_GLOBAL_SYS_MUTEX_AMOUNT=4',
+            'EOOS_GLOBAL_SYS_SEMAPHORE_AMOUNT=4',
+            'EOOS_GLOBAL_SYS_THREAD_AMOUNT=5'
         ]
         self.__check_run_path()
         self.__do_run_eoos_ut('Release')

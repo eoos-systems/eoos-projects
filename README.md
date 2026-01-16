@@ -25,9 +25,9 @@ For present, EOOS Safe is available for **POSIX**, **WIN32**, **FreeRTOS** and *
 of operating systems and has **Sample Applications** for fast start developing new user applications.
 
 This super repository combines only the **POSIX** and **WIN32 API** git repositories.
-The **FreeRTOS** and **KasperskyOS** git repositories are not here, as they belong to exactly
-processor architecture and HW board design. But nevertheless, EOOS API for all the systems is
-absolutely the same.
+The **FreeRTOS**, **Zephyr OS**, **Genaric** and **KasperskyOS** git repositories are not here,
+as they belong to exactly processor architecture and HW board design. But nevertheless, EOOS API
+for all the systems is absolutely the same.
 
 Quality of EOOS Safe:
 
@@ -186,7 +186,7 @@ REPOSITORY$ cd eoos-projects/scripts/python
 Execute the script to initialize all repositories for development.
 
 ```
-REPOSITORY/eoos-projects/scripts/python$ python Begin.py --init
+REPOSITORY/eoos-projects/scripts/python$ python3 Begin.py --init
 ```
 
 **All is done!** The repository and all the sub-repositories are ready to develop on them.
@@ -196,19 +196,19 @@ REPOSITORY/eoos-projects/scripts/python$ python Begin.py --init
 To see other possible options please refer to the script help.
 
 ```
-REPOSITORY/eoos-projects/scripts/python$ python Begin.py --help
+REPOSITORY/eoos-projects/scripts/python$ python3 Begin.py --help
 ```
 
 
 
-#### Integrate Git Baranches
+#### Integrate Git Branches
 
 To be sure any system depending changes made correctly we have to build and to test them
 on all operating systems EOOS is being developed for. To simplify this process, we have created
 the `Integrate.py` script that does all for you on a host operating system it runs on.
 
 **NOTE:** Run CMD in *Run as administrator* mode to be able to install EOOS on Windows and
-execute the commads below.
+execute the commands below.
 
 **NOTE:** Running the script in Bash, the script will request *sudo* password to install EOOS on Linux.
 
@@ -228,7 +228,7 @@ EOOS on your host operating system, and builds and runs EOOS sample applications
 their correct execution.
 
 ```
-REPOSITORY/eoos-projects/scripts/python$ python Integrate.py --eoos <EOOS_PROJECT> --build ALL --jobs 8
+REPOSITORY/eoos-projects/scripts/python$ python3 Integrate.py --eoos <EOOS_PROJECT> --build ALL --jobs 8
 ```
 
 **NOTE:** Please pay attention you have to set correct EOOS project for `--eoos` argument
@@ -241,5 +241,5 @@ as EOOS is ready to be integrated for appropriate operating system.
 To see other possible options please refer to the script help.
 
 ```
-REPOSITORY/eoos-projects/scripts/python$ python Integrate.py --help
+REPOSITORY/eoos-projects/scripts/python$ python3 Integrate.py --help
 ```
